@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #030712;
+  --foreground: #f3f4f6;
+  --gold-primary: #e0b034;
+  --gold-secondary: #b68912;
+}
+
+@theme {
+  --color-gold-primary: var(--gold-primary);
+  --color-gold-secondary: var(--gold-secondary);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* PREMIUM GRID BACKGROUND */
+.luxury-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom radial glows */
+.radial-glow-1 {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}
+
+.radial-glow-2 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 75%);
+}
+
+.radial-glow-3 {
+  background: radial-gradient(circle, rgba(224, 176, 52, 0.08) 0%, transparent 65%);
+}
+
+/* 3D UTILITIES */
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* LEATHER TEXTURE OVERLAY */
+.leather-texture {
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 0),
+                    radial-gradient(rgba(255,255,255,0.07) 1px, transparent 0);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+}
+
+/* PAGES SHADOWS AND TEXTURES */
+.inner-page-texture {
+  background: linear-gradient(90deg, #111827 0%, #1e293b 8%, #0f172a 12%, #0f172a 100%);
+}
+
+.inner-page-texture-rtl {
+  background: linear-gradient(270deg, #111827 0%, #1e293b 8%, #0f172a 12%, #0f172a 100%);
+}
+
+/* GOLDEN INK ORNAMENT */
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(224, 176, 52, 0.2), inset 0 0 15px rgba(224, 176, 52, 0.1);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 8px rgba(224, 176, 52, 0.4);
+}
+
+/* MARBLE SHELF SHADOWS */
+.marble-shelf-gradient {
+  background: linear-gradient(90deg, #090e1a 0%, #111c30 20%, #16243d 50%, #111c30 80%, #090e1a 100%);
+}
+
+/* ANIMATIONS */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-luxury-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.45; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* SCROLLBARS */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
