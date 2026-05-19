@@ -32,6 +32,7 @@ import {
 import { servicesData, uiTranslations, System } from "./data";
 
 export default function VertexCatalog() {
+  const basePath = process.env.NODE_ENV === "production" ? "/catalog" : "";
   const [lang, setLang] = useState<"ar" | "en" | "fr">("ar");
   const [selectedBook, setSelectedBook] = useState<System | null>(null);
   const [isOpening, setIsOpening] = useState(false);
@@ -413,7 +414,7 @@ export default function VertexCatalog() {
                     isRtl ? "border-l md:border-l-0 md:border-r border-white/10" : "border-r border-white/10"
                   }`}
                   style={{
-                    backgroundImage: `linear-gradient(rgba(7, 11, 25, 0.88), rgba(7, 11, 25, 0.95)), url(${activeBook.coverImage})`,
+                    backgroundImage: `linear-gradient(rgba(7, 11, 25, 0.88), rgba(7, 11, 25, 0.95)), url(${basePath}${activeBook.coverImage})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                   }}
