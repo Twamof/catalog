@@ -286,7 +286,7 @@ export default function VertexCatalog() {
                     {/* COVER EMBOSSED IMAGE PREVIEW */}
                     <div className="absolute top-4 inset-x-4 h-32 rounded-lg overflow-hidden border border-white/10 relative">
                       <Image
-                        src={book.coverImage}
+                        src={`${basePath}${book.coverImage}`}
                         alt={bTrans.title}
                         fill
                         unoptimized
@@ -444,7 +444,7 @@ export default function VertexCatalog() {
                         className="absolute inset-0"
                       >
                         <Image
-                          src={activeBook.previewImages[previewImgIndex]}
+                          src={`${basePath}${activeBook.previewImages[previewImgIndex]}`}
                           alt={activeBook.translations[lang].title}
                           fill
                           unoptimized
